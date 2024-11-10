@@ -37,7 +37,7 @@ fclean: clean
 	${RM} ${NAME} ${bonus}
 
 touch:
-	@touch ${SRCS}
+	@touch ${SRCSB}
 
 re: fclean all
 

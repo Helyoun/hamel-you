@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 17:27:19 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/10 18:27:32 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:08:13 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ char **ft_split(char const *s, char c)
 	char	**str;
 
 	cw = ft_countword((char *)s, c);
+	w = 0;
 	str = (char **) ft_calloc((cw + 1), sizeof(char *));
 	if (str == NULL)
 		return (NULL);
@@ -72,15 +73,4 @@ char **ft_split(char const *s, char c)
 		i++;
 	}
 	return (str);
-}
-
-int main(int ac, char **av)
-{
-	int i = 0 ;
-	char **str = ft_split(av[1], av[2][0]);
-	while (i <= ft_countword(av[1], av[2][0]))
-	{
-		printf("%s\n", str[i]);
-		i++;
-	}
 }

@@ -16,7 +16,7 @@ OBJS = ${SRCS:.c=.o}
 OBJSB = ${SRCSB:.c=.o}
 NAME = libft.a
 LIBC = ar rcs
-CC = cc
+CC = cc ${CFLAGS}
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
@@ -36,9 +36,8 @@ clean:
 fclean: clean
 	${RM} ${NAME} ${bonus}
 
-touch:
-	@touch ${SRCSB}
-
 re: fclean all
 
+GIT :
+	git add . && git commit -m "look at me" && git push
 .PHONY : all bonus clean fclean re

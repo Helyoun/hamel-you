@@ -4,12 +4,19 @@ OBJ = ${SRC:.c=.o}
 
 NAME = libft.a
 
-all :
-	ar rcs $(NAME) $(OBJ)
+all : $(NAME) $(OBJ)
+	ar rcs $< $(OBJ)
 
-fclean :
-	rm -rf $(NAME) $(OBJ)
+clean :
+	rm -rf $(OBJ)
+
+fclean : clean
+	rm -rf $(NAME)
 re	: fclean all
+
+.PHUNY : clean
+
+.SECONDERY :
 
 GIT :
 	git add . && git commit -m "ithink i am done" && git push 

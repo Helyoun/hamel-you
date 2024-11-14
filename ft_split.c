@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 17:27:19 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/14 04:00:24 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/14 06:49:15 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,17 @@ static char *ft_storin(char *s, char c, int *i)
 	return (str);
 }
 
+void	*ft_freeit(char **str, int w)
+{
+	while(w > 0)
+	{
+		free(str[w - 1]);
+		w--;
+	}
+	free(str);
+	return (NULL);
+}
+
 char **ft_split(char const *s, char c)
 {
 	int		i;
@@ -59,6 +70,8 @@ char **ft_split(char const *s, char c)
 
 	cw = ft_countword((char *)s, c);
 	w = 0;
+	if (s == NULL)
+		return (NULL);
 	str = (char **) ft_calloc(cw + 1, sizeof(char *));
 	if (str == NULL)
 		return (NULL);
@@ -68,9 +81,12 @@ char **ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			str[w] = ft_storin((char *)s, c, &i);
+			if (str[w] == NULL)
+				return (ft_freeit(str, w));
 			w++;
 		}
 		i++;
 	}
 	return (str);
 }
+

@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:48:30 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/12 17:12:30 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/14 03:57:59 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	str = (char *)s;
 	while (*str != 0)
 	{
-		if (*str == c)
+		if (*str == (char )c)
 			return (str);
 		str++;
 	}
-	if (*str == c)
+	if (*str == (char )c)
 		return (str);
 	return (NULL);
 }

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 07:22:13 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/14 03:50:34 by hamel-yo         ###   ########.fr       */
+/*   Created: 2024/11/13 23:01:30 by hamel-yo          #+#    #+#             */
+/*   Updated: 2024/11/13 23:22:58 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstnew(void *content)
 {
-	char	*str;
-	size_t	i;
+	t_list	*new;
 
-	if (s1 == NULL && s2 == NULL)
+	new = ft_calloc (1, sizeof(t_list));
+	if (new == NULL)
 		return (NULL);
-	if (s1 == NULL)
-		return (ft_strdup(s2));
-	if (s2 == NULL)
-		return (ft_strdup(s1));
-	i = ft_strlen(s1) + ft_strlen(s2) + 1;
-	str = (char *) ft_calloc(i, sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	ft_strlcpy(str, s1, ft_strlen(s1) + 1);
-	ft_strlcat(str, s2, i);
-	return (str);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

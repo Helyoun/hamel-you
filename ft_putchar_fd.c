@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 22:21:44 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/11 22:24:16 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/14 02:23:10 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
-		return ;
 	write(fd, &c, 1);
 }

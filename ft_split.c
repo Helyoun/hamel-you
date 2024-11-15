@@ -5,88 +5,67 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 17:27:19 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/14 06:49:15 by hamel-yo         ###   ########.fr       */
+/*   Created: 2024/11/14 22:15:43 by hamel-yo          #+#    #+#             */
+/*   Updated: 2024/11/15 07:18:14 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_countword(char *s, char c)
+static	size_t	ft_count_word(char *s, char c)
 {
-	int	cw;
+	size_t	w;
 
-	cw = 0;
-	if (s == NULL)
-		return (0);
+	w = 0;
 	while (*s != 0)
 	{
 		if (*s != c && *(s + 1) == c)
-			cw++;
-		s++;
+			w++;
+		s++ ;
 	}
-	return (cw) ;
+	return(w);
 }
 
-static char *ft_storin(char *s, char c, int *i)
+static	char	*ft_makestr(char **s, char c)
 {
-	int l;
-	int	j;
-	char *str;
+	size_t	i;
+	char	*str;
 
-	j = 0;
-	l = *i;
-	while (s[l] != c && s[l] != 0)
-		l++;
-	str = (char *) ft_calloc((l - (*i)) + 1, sizeof(char));
+	i = 0 ;
+	while (*s[i] != c && *s[i] != 0)
+		i++;
+	str = (char *)ft_calloc(i, sizeof(char ));
 	if (str == NULL)
 		return (NULL);
-	while ((*i) < l)
-	{
-		str[j] = s[(*i)];
-		*i = (*i) + 1;
-		j++;
-	}
-	return (str);
-}
 
-void	*ft_freeit(char **str, int w)
-{
-	while(w > 0)
-	{
-		free(str[w - 1]);
-		w--;
-	}
-	free(str);
-	return (NULL);
+	return (str);
 }
 
 char **ft_split(char const *s, char c)
 {
-	int		i;
-	int		cw;
-	int		w;
-	char	**str;
+	size_t	w;
+	size_t	i;
+	size_t	**strs;
 
-	cw = ft_countword((char *)s, c);
-	w = 0;
-	if (s == NULL)
+	w = ft_count_word(s, c);
+	strs = (char **)ft_calloc(w + 1, sizeof(char *));
+	if (strs == NULL)
 		return (NULL);
-	str = (char **) ft_calloc(cw + 1, sizeof(char *));
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i] != 0)
+	while (*s != 0)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			str[w] = ft_storin((char *)s, c, &i);
-			if (str[w] == NULL)
-				return (ft_freeit(str, w));
-			w++;
+			strs[i] = ft_makestr(&s, c);
+			if (strs[i] == NULL)
+				return(ft_freeall(strs, i));
+			i++;
 		}
-		i++;
+		s++;
 	}
-	return (str);
+	return (strs);
 }
-
+*/
+int main (int c, char **av)
+{
+	printf("%s", ft_makestr(&av[1], av[2][0]));
+}

@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:45:07 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/14 02:36:38 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/14 21:19:19 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 			dst[i] = 0;
 		i++;
 	}
-	if (src[i] == 0 && i < dstsize )
+	if (src[i] == 0 && i < dstsize)
 		dst[i] = 0;
 	return (i);
 }

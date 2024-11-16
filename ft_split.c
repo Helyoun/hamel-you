@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:15:43 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/16 06:32:06 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/16 08:15:14 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ char **ft_split(char const *s, char c)
 				return (ft_free(strs, i));
 			i++;
 		}
-		s++;
+		if (*s != 0)
+			s++;
 	}
 	return (strs);
 }

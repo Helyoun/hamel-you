@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 07:20:29 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/08 07:20:34 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/18 21:34:46 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	*ft_calloc(size_t count, size_t size)
 	if (ptr == NULL)
 		return (NULL);
 	ft_bzero (ptr, count * size);
-	return (ptr) ;
+	return (ptr);
 }

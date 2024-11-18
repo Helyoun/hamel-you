@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 22:20:13 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/11 22:21:29 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/18 21:41:22 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 		n = n % 10;
 	}
-	if(n >= 0 && n < 10)
+	if ((n >= 0) && (n < 10))
 	{
 		c = n % 10 + '0';
 		write (fd, &c, 1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:37:42 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/07 21:44:39 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/18 21:40:34 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	size_t	i;
+
+	i = 0;
 	if (dst > src)
+	{
 		while (len > 0)
 		{
-			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len - 1] ;
+			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len - 1];
 			len--;
 		}
+	}
 	else if (dst < src)
 	{
-		size_t	i;
-		i = 0;
 		while (i < len)
 		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i] ;
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
 	}

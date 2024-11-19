@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 18:30:40 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/18 21:41:48 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/19 21:26:41 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	i = ft_strlen (s);
 	str = (char *)ft_calloc(i + 1, sizeof(char));

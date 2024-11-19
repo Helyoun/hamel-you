@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:45:45 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/11 21:56:06 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/19 20:43:57 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dl + i] = 0;
 	return (dl + ft_strlen(src));
 }
+
+// NULL, NULL, 0
+// NULL, NULL, 1
+// "", NULL, 3
+// "", "", 0
+// NULL, "", 0
+// NULL, "", 45
+// "", "", 45

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 01:46:24 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/19 03:07:46 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/19 21:14:44 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void ft_lstclear(t_list **lst, void (*del)(void*))
 		return ;
 	while ((*lst)->next != NULL)
 	{
-
-
+	}
+	
 }

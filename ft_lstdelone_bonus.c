@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 01:42:18 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/19 01:45:59 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/19 21:24:12 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (*lst == NULL)
+	if (*lst == NULL || del == NULL)
 		return (NULL);
 	while (lst->next != NULL)
 	{

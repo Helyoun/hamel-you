@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 07:21:56 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/18 21:43:23 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/20 00:30:27 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,29 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substr;
-	size_t	i;
+	unsigned int	i;
+	char			*str;
 
+	if (s == NULL)
+		return (NULL);
+	if (start >= len)
+		return (ft_strdup(""));
 	i = 0;
-	if (!s)
+	while ((size_t)(i + start) < len && s[i] != 0)
+		i++;
+	str = ft_calloc(i + 1, sizeof (char));
+	if (str == NULL)
 		return (NULL);
-	if (start >= (unsigned int)ft_strlen(s))
-		return ((char *)ft_calloc(1, sizeof(char)));
-	if ((unsigned int)ft_strlen(s) <= start + len)
-		substr = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
-	else
-		substr = malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	while (s[start] && i < len)
-		substr[i++] = s[start++];
-	substr[i] = '\0';
-	return (substr);
+	while ((size_t)start != len && s[start] != 0)
+	{
+		str[i] = s[start] ;
+		i++;
+		start++;
+	}
+	return (str);
 }
+/*
+int main(int ac, char **av)
+{
+	printf("%s", ft_substr(av[1], atoi(av[2]), atoi(av[3])));
+}*/

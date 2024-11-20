@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:45:45 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/19 20:43:57 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/20 21:10:04 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	dl;
 
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	dl = ft_strlen(dst);
 	if (dl > dstsize)
 		return (ft_strlen(src) + dstsize);

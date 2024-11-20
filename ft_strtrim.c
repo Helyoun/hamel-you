@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 03:08:30 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/19 18:55:30 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/20 20:53:46 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static int	isit(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	size_t	o ;
+	int		len;
+	int		o ;
 	char	*str;
 
 	if (s1 == NULL)
@@ -36,16 +36,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (isit(*s1, set) == 1 && *s1 != 0)
 		s1++;
 	len = ft_strlen(s1);
-	while (isit(s1[len - 1], set) == 1 && len > 0)
-		len--;
+	while (len > 0 && isit(s1[len - 1], set) == 1)
+	len--;
 	str = (char *)ft_calloc(len + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	o = 0;
-	while (o < len)
+	while (s1[o] != 0 && o < len)
 	{
 		str[o] = s1[o];
 		o++;
 	}
+	str[o] = 0;
 	return (str);
 }
+/*
+int main (int c, char **av)
+{
+	printf("%s", ft_strtrim(av[1], av[2]));
+}*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hamel-yo <hamel-yo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 22:15:43 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/19 20:25:40 by hamel-yo         ###   ########.fr       */
+/*   Created: 2024/11/21 06:01:28 by hamel-yo          #+#    #+#             */
+/*   Updated: 2024/11/21 09:53:57 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	if (strs == NULL)
 		return (NULL);
 	i = 0;
-	while (*s != 0)
+	while (*s != 0 && i < w)
 	{
 		if (*s != c)
 		{

@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 03:10:43 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/19 20:37:42 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/21 09:37:37 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <string.h>
 
 typedef struct s_list
 {

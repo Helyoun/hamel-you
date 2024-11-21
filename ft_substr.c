@@ -6,7 +6,7 @@
 /*   By: hamel-yo <hamel-yo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 07:21:56 by hamel-yo          #+#    #+#             */
-/*   Updated: 2024/11/20 21:14:29 by hamel-yo         ###   ########.fr       */
+/*   Updated: 2024/11/21 09:44:41 by hamel-yo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	ls = len ;
 	if (start + len > ft_strlen(s))
-		ls = ft_strlen(s);
-	str = ft_calloc(ls + 1, sizeof(char));
+		len = ft_strlen(s) - start;
+	str = ft_calloc(len + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	ls = 0;
-	while (ls < len && s[start + ls] != 0)
+	while (s[start + ls] != 0 && ls < len)
 	{
 		str[ls] = s[start + ls];
 		ls++;

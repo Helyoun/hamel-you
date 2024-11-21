@@ -34,6 +34,3 @@ fclean : clean
 re	: fclean all
 
 .PHONY: re fclean clean bouns
-
-GIT :
-	git add . && git commit -m "i think i am done" && git push 
